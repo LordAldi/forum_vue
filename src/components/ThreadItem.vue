@@ -1,0 +1,54 @@
+<template>
+  <div>
+    <p>
+      <a href="#">{{ thread.title }}</a>
+    </p>
+    <p class="text-faded text-xsmall">
+      By <a href="#">{{ userById(thread.userId).name }}</a
+      >, {{ thread.publishedAt }}.
+    </p>
+  </div>
+
+  <div class="activity">
+    <p class="replies-count">
+      {{ thread.posts.length }}
+      {{
+        thread.posts.length > 1 || thread.posts.length === 0
+          ? 'replies'
+          : 'reply'
+      }}
+    </p>
+
+    <img class="avatar-medium" :src="userById(thread.userId).avatar" alt="" />
+
+    <div>
+      <p class="text-xsmall">
+        <a href="#">{{ userById(thread.userId).name }}</a>
+      </p>
+      <p class="text-xsmall text-faded">{{ thread.publishedAt }}</p>
+    </div>
+  </div>
+</template>
+<script>
+import sourceData from '@/data.json'
+export default {
+  props: {
+    thread: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      posts: sourceData.posts,
+      users: sourceData.users
+    }
+  },
+  methods: {
+    userById(userId) {
+      return this.users.find((u) => u.id === userId)
+    }
+  }
+}
+</script>
+<style></style>

@@ -1,6 +1,6 @@
 <template>
   <div class="col-large push-top">
-    <h1>{{ threads.title }}</h1>
+    <h1>{{ thread.title }}</h1>
     <div class="post-list">
       <div class="post" v-for="postId in thread.posts" :key="postId">
         <div class="user-info">
@@ -65,4 +65,3 @@ export default {
   }
 }
 </script>
-<style></style>
