@@ -1,6 +1,6 @@
-import PageHome from '@/components/PageHome.vue'
-import PageNotFound from '@/components/PageNotFound.vue'
-import PageThreadShow from '@/components/PageThreadShow.vue'
+import PageHome from '@/pages/PageHome.vue'
+import PageNotFound from '@/pages/PageNotFound.vue'
+import PageThreadShow from '@/pages/PageThreadShow.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import sourceData from '@/data.json'
 
