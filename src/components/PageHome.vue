@@ -35,7 +35,6 @@
 
 <script>
 import sourceData from '@/data.json'
-console.log(sourceData.threads)
 export default {
   data() {
     return {
