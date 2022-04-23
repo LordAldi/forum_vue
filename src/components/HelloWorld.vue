@@ -84,6 +84,9 @@
       </li>
     </ul>
   </div>
+  <div>
+    {{ sourceData }}
+  </div>
 </template>
 
 <script>

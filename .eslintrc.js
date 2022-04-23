@@ -10,10 +10,17 @@ module.exports = {
   },
 
   rules: {
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'error',
+    'space-before-function-paren': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'prettier/prettier': ['error', { endOfLine: 'auto' }]
   },
 
-  extends: ['plugin:vue/vue3-essential', 'eslint:recommended', '@vue/standard']
+  extends: [
+    'plugin:vue/vue3-essential',
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    '@vue/standard'
+  ]
 }
