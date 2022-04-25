@@ -35,7 +35,6 @@
 </template>
 <script>
 import sourceData from '@/data.json'
-import AppDate from './AppDate.vue'
 export default {
   props: {
     thread: {
@@ -53,8 +52,7 @@ export default {
     userById(userId) {
       return this.users.find((u) => u.id === userId)
     }
-  },
-  components: { AppDate }
+  }
 }
 </script>
 <style></style>
