@@ -4,7 +4,6 @@
 </template>
 
 <script>
-import sourceData from '@/data.json'
 import ForumList from '@/components/ForumList'
 export default {
   props: {
@@ -17,12 +16,14 @@ export default {
   },
   computed: {
     category() {
-      return sourceData.categories.find((category) => category.id === this.id)
+      return this.$store.state.categories.find(
+        (category) => category.id === this.id
+      )
     }
   },
   methods: {
     getForumFromCategory(category) {
-      return sourceData.forums.filter(
+      return this.$store.state.forums.filter(
         (forum) => forum.categoryId === category.id
       )
     }
