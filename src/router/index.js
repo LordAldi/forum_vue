@@ -3,8 +3,8 @@ import PageNotFound from '@/pages/PageNotFound.vue'
 import PageThreadShow from '@/pages/PageThreadShow.vue'
 import PageCategory from '@/pages/PageCategory.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import sourceData from '@/data.json'
 import PageForum from '@/pages/PageForum.vue'
+import store from '@/store'
 
 const routes = [
   {
@@ -30,7 +30,7 @@ const routes = [
     component: PageThreadShow,
     props: true,
     beforeEnter: (to, from, next) => {
-      const threadExist = sourceData.threads.find(
+      const threadExist = store.state.threads.find(
         (thread) => thread.id === to.params.id
       )
       if (threadExist) {
