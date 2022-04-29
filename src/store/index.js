@@ -1,8 +1,15 @@
 import { createStore } from 'vuex'
 import sourceData from '@/data.json'
 export default createStore({
-  state: sourceData,
-
+  state: {
+    ...sourceData,
+    authId: 'VXjpr2WHa8Ux4Bnggym8QFLdv5C3'
+  },
+  getters: {
+    authUser: (state) => {
+      return state.users.find((user) => user.id === state.authId)
+    }
+  },
   actions: {
     createPost(ctx, post) {
       post.id = 'gilda' + Math.random()
