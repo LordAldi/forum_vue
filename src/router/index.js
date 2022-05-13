@@ -1,6 +1,7 @@
 import PageHome from '@/pages/PageHome.vue'
 import PageNotFound from '@/pages/PageNotFound.vue'
 import PageThreadShow from '@/pages/PageThreadShow.vue'
+import PageThreadCreate from '@/pages/PageThreadCreate.vue'
 import PageCategory from '@/pages/PageCategory.vue'
 import PageProfile from '@/pages/PageProfile.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -57,6 +58,12 @@ const routes = [
         })
       }
     }
+  },
+  {
+    path: '/forum/:forumId/thread/create',
+    name: 'ThreadCreate',
+    component: PageThreadCreate,
+    props: true
   },
   {
     path: '/:pathMatch(.*)*',
