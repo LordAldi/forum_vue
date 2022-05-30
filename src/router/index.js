@@ -4,10 +4,10 @@ import PageThreadShow from '@/pages/PageThreadShow.vue'
 import PageThreadCreate from '@/pages/PageThreadCreate.vue'
 import PageCategory from '@/pages/PageCategory.vue'
 import PageProfile from '@/pages/PageProfile.vue'
+import PageThreadEdit from '@/pages/PageThreadEdit.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import PageForum from '@/pages/PageForum.vue'
 import store from '@/store'
-
 const routes = [
   {
     path: '/',
@@ -63,6 +63,12 @@ const routes = [
     path: '/forum/:forumId/thread/create',
     name: 'ThreadCreate',
     component: PageThreadCreate,
+    props: true
+  },
+  {
+    path: '/thread/:id/edit',
+    name: 'ThreadEdit',
+    component: PageThreadEdit,
     props: true
   },
   {
