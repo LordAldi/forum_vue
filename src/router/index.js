@@ -8,6 +8,7 @@ import PageThreadEdit from '@/pages/PageThreadEdit.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import PageForum from '@/pages/PageForum.vue'
 import store from '@/store'
+import { findById } from '@/helpers'
 const routes = [
   {
     path: '/',
@@ -44,9 +45,7 @@ const routes = [
     component: PageThreadShow,
     props: true,
     beforeEnter: (to, from, next) => {
-      const threadExist = store.state.threads.find(
-        (thread) => thread.id === to.params.id
-      )
+      const threadExist = findById(store.state.threads, to.params.id)
       if (threadExist) {
         return next()
       } else {
